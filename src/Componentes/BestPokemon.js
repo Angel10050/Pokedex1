@@ -1,14 +1,30 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-const BestPokemon = (props) => {
-    return (
-      <ul>
-      {
-          props.pokemonName.map((name,index) =>{
-          return <li key={index}>{name}</li>
-        })
-      }</ul>
-    )
+class BestPokemon extends Component{
+  state = {
+    pokemonNames : [],
+    isLoading : true,
+    error : null
+
   }
 
+  componentDidMount(){
+    fetch('https://pokeapi.co/api/v2/pokedex/1/')
+    .then(res => res.json())
+    .then(data =>{
+      this.setState({
+        pokemonNames :[data.pokemon_entries[0].pokemon_species.name, data.pokemon_entries[3].pokemon_species.name, data.pokemon_entries[6].pokemon_species.name],
+        isLoading :false
+    })
+  })
+}
+  
+  render(){
+    return (
+      <ul>{this.state.isLoading ? <span>Loading...</span> : this.state.pokemonNames.map((name,index) =>{
+          return <li key={index}>{name}</li>
+        })}</ul>
+    )
+  }
+}
 export default BestPokemon
