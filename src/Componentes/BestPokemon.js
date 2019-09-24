@@ -9,7 +9,7 @@ class BestPokemon extends Component{
   }
 
   componentDidMount(){
-    fetch('https://pokeapi.co/api/v2/pokedex/1/')
+    fetch('https://pokeapi.co/api/v2/pokedex/0002/')
     .then(res => res.json())
     .then(data =>{
       this.setState({
@@ -21,7 +21,7 @@ class BestPokemon extends Component{
   
   render(){
     return (
-      <ul>{this.state.isLoading ? <span>Loading...</span> : this.state.pokemonNames.map((name,index) =>{
+      <ul>{this.state.isLoading ? <span>Loading... Wait</span> : this.state.pokemonNames.map((name,index) =>{
           return <li key={index}>{name}</li>
         })}</ul>
     )
