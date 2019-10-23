@@ -1,15 +1,15 @@
 import React, {Component} from 'react'
+import '../App.css'
 
 class BestPokemon extends Component{
   state = {
     pokemonNames : [],
     isLoading : true,
     error : null
-
   }
 
   componentDidMount(){
-    fetch('https://pokeapi.co/api/v2/pokedex/0002/')
+    fetch('https://pokeapi.co/api/v2/pokedex/1/')
     .then(res => res.json())
     .then(data =>{
       this.setState({
@@ -22,7 +22,7 @@ class BestPokemon extends Component{
   render(){
     return (
       <ul>{this.state.isLoading ? <span>Loading... Wait</span> : this.state.pokemonNames.map((name,index) =>{
-          return <li key={index}>{name}</li>
+          return <li className='listOfPokemonsFromApi' key={index}>{name}</li>
         })}</ul>
     )
   }

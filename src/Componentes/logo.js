@@ -6,7 +6,7 @@ class Logo extends Component {
     return (
         <header>
           <h1 className='h1'>Welcome to {this.props.appName}</h1>
-        <img onClick={this.props.logWhenClicked} src={'https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png'} alt='Imagen de un ave pokemon'></img>
+        <img onClick={this.props.logWhenClicked} src={'https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png'} alt='Imagen de un ave pokemon'></img>
         </header>
     )
   }

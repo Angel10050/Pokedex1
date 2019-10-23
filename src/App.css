@@ -1,8 +1,15 @@
+*{
+    margin-bottom: 40px;
+    padding: 0%;
+    color: black;
+}
 .app{
-    background-image: url('https://www.tokkoro.com/picsup/1106810-bird.jpg');
-    background-repeat: no-repeat; 
-    background-attachment: scroll;
+    background: url('https://i.ibb.co/cLpSqdY/pokemon-1513925.jpg') center/cover;
     color: aliceblue;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 }
 .h1 {
     margin: 0;
@@ -16,4 +23,12 @@
 }
 .divAndButton{
     margin: 5px 0 15px 25px;
+}
+
+.listOfPokemonsFromApi{
+    font-weight: bolder;
+    font-size: 22px;
+    text-decoration: line-through;
+    color: red;
+    list-style: none;
 }
